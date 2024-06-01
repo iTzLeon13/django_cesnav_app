@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro para el Rally</title>
+    <link rel="stylesheet" href="{% static 'registration/styles.css' %}">
+</head>
+<body>
+    <div class="login">
+        <img src="{% static 'registration/profile.png' %}" alt="Profile Image">
+        <h3>Registro para el Rally de Liderazgo - CESNAV 2024</h3>
+        <h2>Ingrese sus datos</h2>
+
+        <form class="login-form" method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Nombre completo" required id="name">
+            <select name="grade" required id="grade">
+                <option value="" disabled selected>Seleccione su grado militar</option>
+                <option value="marinero">Marinero</option>
+                <option value="cabo">Cabo</option>
+                <option value="tercer maestre">Tercer Maestre</option>
+                <option value="segundo maestre">Segundo Maestre</option>
+                <option value="primer maestre">Primer Maestre/Guardiamarina</option>
+                <option value="teniente corbeta">Teniente de Corbeta</option>
+                <option value="teniente fragata">Teniente de Fragata</option>
+                <option value="teniente navio">Teniente de Navío</option>
+                <option value="capitan corbeta">Capitán de Corbeta</option>
+                <option value="capitan fragata">Capitán de Fragata</option>
+                <option value="capitan navio">Capitán de Navío</option>
+                <option value="contralmirante">Contralmirante</option>
+                <option value="vicealmirante">Vicealmirante</option>
+                <option value="almirante">Almirante</option>
+            </select>
+            <input type="text" name="unit" placeholder="Unidad" required id="unit">
+            <input type="email" name="email" placeholder="Correo electrónico" required id="email">
+            <label>
+                <input type="checkbox" name="will_attend" id="will_attend"> Estaré presente para mi participación
+            </label>
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+</body>
+</html>

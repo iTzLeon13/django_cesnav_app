@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Participantes Registrados</title>
+</head>
+<body>
+    <h1>Participantes Registrados</h1>
+    <ul>
+        {% for participant in participants %}
+            <li>{{ participant.name }} - {{ participant.grade }} - {{ participant.unit }} - {{ participant.email }} - {{ participant.will_attend }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
